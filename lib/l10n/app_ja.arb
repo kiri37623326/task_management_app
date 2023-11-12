@@ -1,0 +1,6 @@
+{
+    "@@locale": "ja",
+    "hello": "ようこそ {name}",
+    "signIn": "サインイン",
+    "wrongEmailOrPassword": "メールアドレスかパスワードが正しくありません。"
+}
