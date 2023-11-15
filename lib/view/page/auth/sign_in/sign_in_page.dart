@@ -57,8 +57,9 @@ class _SignInView extends HookWidget {
                         },
                         failure: (e) {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: Text(AppLocalizations.of(context)!
-                                  .wrongEmailOrPassword)));
+                            content: Text(AppLocalizations.of(context)!
+                                .wrongEmailOrPassword),
+                          ));
                         },
                       );
                     },

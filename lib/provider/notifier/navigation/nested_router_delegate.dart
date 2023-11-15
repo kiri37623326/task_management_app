@@ -16,10 +16,7 @@ class NestedRouterDelegate extends RouterDelegate<RoutePath>
       _ref.read(navigationStateProvider).mainAppRoutePath;
 
   NestedRouterDelegate(this._ref) : navigatorKey = GlobalKey<NavigatorState>() {
-    _ref.listen(
-      navigationStateProvider.select((value) => value.mainAppRoutePath),
-      (_, __) => notifyListeners(),
-    );
+    _ref.listen(navigationStateProvider, (_, __) => notifyListeners());
   }
 
   /// 戻るボタンが押された時の挙動、Web のブラウザバックは無関係

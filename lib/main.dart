@@ -17,6 +17,7 @@ void main() {
     enabled: kIsWeb && !kReleaseMode,
     builder: (context) => ProviderScope(
       child: MyApp(),
+      overrides: [],
     ),
   ));
 }
@@ -42,7 +43,7 @@ class MyApp extends ConsumerWidget {
       ],
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      title: "Flutter Sample Application",
+      title: "Task management",
       theme: MyTheme.lightTheme(),
       darkTheme: MyTheme.darkTheme(),
       routerDelegate: MainRouterDelegate(ref),

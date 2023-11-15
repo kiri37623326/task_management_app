@@ -1,29 +1,39 @@
-// import 'package:task_management_application/infrastructure/auth_service/base_auth_service.dart';
+import 'package:task_management_application/infrastructure/auth_service/base_auth_service.dart';
 
-// class IndividualAuthService extends BaseAuthService {
-//   @override
-//   void confirmEmailAddress() {
-//     // TODO: implement confirmEmailAddress
-//   }
+class IndividualAuthService extends BaseAuthService {
+  @override
+  Future<void> signOut() {
+    // TODO: implement signOut
+    throw UnimplementedError();
+  }
 
-//   @override
-//   void signInWithEmailAndPassword(
-//       {required String email, required String password}) {
-//     // TODO: implement signInWithEmailAndPassword
-//   }
+  @override
+  Future<void> confirmEmailAddress() {
+    // TODO: implement confirmEmailAddress
+    throw UnimplementedError();
+  }
 
-//   @override
-//   void signInWithUsernameAndPassword(
-//       {required String username, required String password}) {
-//     // TODO: implement signInWithUsernameAndPassword
-//   }
+  @override
+  Future<void> signInWithEmailAndPassword(
+      {required String email, required String password}) {
+    // TODO: implement signInWithEmailAndPassword
+    throw UnimplementedError();
+  }
 
-//   @override
-//   void signUp(
-//       {required String username,
-//       required String email,
-//       required String password,
-//       String? confirmPassword}) {
-//     // TODO: implement signUp
-//   }
-// }
+  @override
+  Future<void> signInWithUsernameAndPassword(
+      {required String username, required String password}) {
+    // TODO: implement signInWithUsernameAndPassword
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> signUp(
+      {required String username,
+      required String email,
+      required String password,
+      String? confirmPassword}) {
+    // TODO: implement signUp
+    throw UnimplementedError();
+  }
+}

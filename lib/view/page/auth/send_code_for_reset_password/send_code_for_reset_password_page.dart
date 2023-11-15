@@ -2,15 +2,11 @@ import 'package:flutter/material.dart';
 
 class SendCodeForResetPasswordPage extends MaterialPage {
   const SendCodeForResetPasswordPage()
-      : super(child: const SendCodeForResetPasswordView());
+      : super(child: const _SendCodeForResetWidget());
 }
 
-class SendCodeForResetPasswordView extends StatelessWidget {
-  const SendCodeForResetPasswordView({super.key});
-
-  static Page get page {
-    return const MaterialPage(child: SendCodeForResetPasswordView());
-  }
+class _SendCodeForResetWidget extends StatelessWidget {
+  const _SendCodeForResetWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

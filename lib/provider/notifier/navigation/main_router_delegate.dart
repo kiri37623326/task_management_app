@@ -6,11 +6,11 @@ import 'package:task_management_application/provider/notifier/navigation/navigat
 import 'package:task_management_application/provider/notifier/sign_in_user_notifier.dart';
 import 'package:task_management_application/provider/state/navigation/route_path.dart';
 import 'package:task_management_application/view/page/main_app/main_app_page.dart';
-import 'package:task_management_application/view/page/reset_password/reset_password_page.dart';
-import 'package:task_management_application/view/page/send_code_for_reset_password/send_code_for_reset_password_page.dart';
+import 'package:task_management_application/view/page/auth/reset_password/reset_password_page.dart';
+import 'package:task_management_application/view/page/auth/send_code_for_reset_password/send_code_for_reset_password_page.dart';
 import 'package:task_management_application/view/page/session_timeout_page.dart';
-import 'package:task_management_application/view/page/sign_in/sign_in_page.dart';
-import 'package:task_management_application/view/page/sign_up/sign_up_page.dart';
+import 'package:task_management_application/view/page/auth/sign_in/sign_in_page.dart';
+import 'package:task_management_application/view/page/auth/sign_up/sign_up_page.dart';
 
 /// [RouterDelegate] は 渡された設定に基づいて状態を復元する役割
 class MainRouterDelegate extends RouterDelegate<RoutePath>
@@ -23,8 +23,6 @@ class MainRouterDelegate extends RouterDelegate<RoutePath>
   final WidgetRef _ref;
 
   MainRouterDelegate(this._ref) : navigatorKey = GlobalKey<NavigatorState>() {
-    // navigationStateProviderのmainAppNavigationStateを監視し
-    // 変更があった際に再描画が必要と判定する
     _ref.listen(navigationStateProvider, (_, __) => notifyListeners());
   }
 
