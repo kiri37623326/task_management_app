@@ -28,6 +28,7 @@ dependencies:
   json_annotation: ^4.8.1
   drift: ^2.13.1
   local_auth: ^2.1.7
+  amazon_cognito_identity_dart_2: ^3.6.0
 
 dev_dependencies:
   flutter_test:

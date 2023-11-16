@@ -19,8 +19,7 @@ mixin _$SignInUser {
   String get id => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  AuthenticationInfo get authenticationInfo =>
-      throw _privateConstructorUsedError;
+  Session get session => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInUserCopyWith<SignInUser> get copyWith =>
@@ -33,11 +32,7 @@ abstract class $SignInUserCopyWith<$Res> {
           SignInUser value, $Res Function(SignInUser) then) =
       _$SignInUserCopyWithImpl<$Res, SignInUser>;
   @useResult
-  $Res call(
-      {String id,
-      String displayName,
-      String email,
-      AuthenticationInfo authenticationInfo});
+  $Res call({String id, String displayName, String email, Session session});
 }
 
 /// @nodoc
@@ -56,7 +51,7 @@ class _$SignInUserCopyWithImpl<$Res, $Val extends SignInUser>
     Object? id = null,
     Object? displayName = null,
     Object? email = null,
-    Object? authenticationInfo = null,
+    Object? session = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -71,10 +66,10 @@ class _$SignInUserCopyWithImpl<$Res, $Val extends SignInUser>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      authenticationInfo: null == authenticationInfo
-          ? _value.authenticationInfo
-          : authenticationInfo // ignore: cast_nullable_to_non_nullable
-              as AuthenticationInfo,
+      session: null == session
+          ? _value.session
+          : session // ignore: cast_nullable_to_non_nullable
+              as Session,
     ) as $Val);
   }
 }
@@ -87,11 +82,7 @@ abstract class _$$SignInUserImplCopyWith<$Res>
       __$$SignInUserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      String displayName,
-      String email,
-      AuthenticationInfo authenticationInfo});
+  $Res call({String id, String displayName, String email, Session session});
 }
 
 /// @nodoc
@@ -108,7 +99,7 @@ class __$$SignInUserImplCopyWithImpl<$Res>
     Object? id = null,
     Object? displayName = null,
     Object? email = null,
-    Object? authenticationInfo = null,
+    Object? session = null,
   }) {
     return _then(_$SignInUserImpl(
       id: null == id
@@ -123,10 +114,10 @@ class __$$SignInUserImplCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      authenticationInfo: null == authenticationInfo
-          ? _value.authenticationInfo
-          : authenticationInfo // ignore: cast_nullable_to_non_nullable
-              as AuthenticationInfo,
+      session: null == session
+          ? _value.session
+          : session // ignore: cast_nullable_to_non_nullable
+              as Session,
     ));
   }
 }
@@ -138,7 +129,7 @@ class _$SignInUserImpl with DiagnosticableTreeMixin implements _SignInUser {
       {required this.id,
       required this.displayName,
       required this.email,
-      required this.authenticationInfo});
+      required this.session});
 
   @override
   final String id;
@@ -147,11 +138,11 @@ class _$SignInUserImpl with DiagnosticableTreeMixin implements _SignInUser {
   @override
   final String email;
   @override
-  final AuthenticationInfo authenticationInfo;
+  final Session session;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignInUser(id: $id, displayName: $displayName, email: $email, authenticationInfo: $authenticationInfo)';
+    return 'SignInUser(id: $id, displayName: $displayName, email: $email, session: $session)';
   }
 
   @override
@@ -162,7 +153,7 @@ class _$SignInUserImpl with DiagnosticableTreeMixin implements _SignInUser {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('displayName', displayName))
       ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('authenticationInfo', authenticationInfo));
+      ..add(DiagnosticsProperty('session', session));
   }
 
   @override
@@ -174,13 +165,11 @@ class _$SignInUserImpl with DiagnosticableTreeMixin implements _SignInUser {
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.authenticationInfo, authenticationInfo) ||
-                other.authenticationInfo == authenticationInfo));
+            (identical(other.session, session) || other.session == session));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, displayName, email, authenticationInfo);
+  int get hashCode => Object.hash(runtimeType, id, displayName, email, session);
 
   @JsonKey(ignore: true)
   @override
@@ -194,7 +183,7 @@ abstract class _SignInUser implements SignInUser {
       {required final String id,
       required final String displayName,
       required final String email,
-      required final AuthenticationInfo authenticationInfo}) = _$SignInUserImpl;
+      required final Session session}) = _$SignInUserImpl;
 
   @override
   String get id;
@@ -203,7 +192,7 @@ abstract class _SignInUser implements SignInUser {
   @override
   String get email;
   @override
-  AuthenticationInfo get authenticationInfo;
+  Session get session;
   @override
   @JsonKey(ignore: true)
   _$$SignInUserImplCopyWith<_$SignInUserImpl> get copyWith =>

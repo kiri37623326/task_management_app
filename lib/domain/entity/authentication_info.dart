@@ -1,1 +1,3 @@
-abstract class AuthenticationInfo {}
+abstract class Session {}
+
+class CognitoSession extends Session {}

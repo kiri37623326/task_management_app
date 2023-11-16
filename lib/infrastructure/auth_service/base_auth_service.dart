@@ -1,8 +1,8 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:task_management_application/infrastructure/auth_service/cognito_auth_service.dart';
+import 'package:task_management_application/domain/entity/authentication_info.dart';
 
 final authServiceProvider = Provider<BaseAuthService>((ref) {
-  return CognitoAuthService();
+  throw UnimplementedError();
 });
 
 abstract class BaseAuthService {
@@ -27,5 +27,12 @@ abstract class BaseAuthService {
 
   // void signInWithPasskey();
 
-  Future<void> signOut();
+  Future<void> resetPassword({
+    required Session session,
+    required String email,
+    required String newPassword,
+    required String confirmationNewPassword,
+  });
+
+  Future<void> signOut(Session session);
 }

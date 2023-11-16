@@ -9,6 +9,6 @@ class SignInUser with _$SignInUser {
     required String id,
     required String displayName,
     required String email,
-    required AuthenticationInfo authenticationInfo,
+    required Session session,
   }) = _SignInUser;
 }

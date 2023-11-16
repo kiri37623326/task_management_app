@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:task_management_application/core/utils/logger.dart';
+import 'package:task_management_application/domain/use_case/sign_in_with_email_and_password_use_case.dart';
+import 'package:task_management_application/domain/use_case_impl/sign_in_with_email_and_password_use_case_impl.dart';
+import 'package:task_management_application/infrastructure/auth_service/base_auth_service.dart';
 import 'package:task_management_application/provider/notifier/navigation/main_route_information_parser.dart';
 import 'package:task_management_application/provider/notifier/navigation/main_router_delegate.dart';
 import 'package:task_management_application/view/theme/my_theme.dart';
@@ -16,8 +19,10 @@ void main() {
   runApp(DevicePreview(
     enabled: kIsWeb && !kReleaseMode,
     builder: (context) => ProviderScope(
+      overrides: const [
+        // MEMO: override provider if you need dependencies infection.
+      ],
       child: MyApp(),
-      overrides: [],
     ),
   ));
 }
@@ -43,7 +48,7 @@ class MyApp extends ConsumerWidget {
       ],
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      title: "Task management",
+      title: "Task Management",
       theme: MyTheme.lightTheme(),
       darkTheme: MyTheme.darkTheme(),
       routerDelegate: MainRouterDelegate(ref),
