@@ -1,20 +1,17 @@
 import 'package:task_management_application/core/utils/logger.dart';
 import 'package:task_management_application/core/utils/result.dart';
-import 'package:task_management_application/domain/use_case/sign_in_with_email_and_password_use_case.dart';
+import 'package:task_management_application/domain/entity/authentication_info.dart';
+import 'package:task_management_application/domain/use_case/auth/sign_out_use_case.dart';
 import 'package:task_management_application/infrastructure/auth_service/base_auth_service.dart';
 
-class SignInWithEmailAndPasswordUseCaseImpl
-    extends SignInWithEmailAndPasswordUseCase {
-  SignInWithEmailAndPasswordUseCaseImpl(this._authService);
+class SignOutUseCaseImpl extends SignOutUseCase {
+  SignOutUseCaseImpl(this._authService);
   final BaseAuthService _authService;
+
   @override
-  Future<Result> signInWithEmailAndPassword(
-      String email, String password) async {
+  Future<Result<void>> signOut(Session session) async {
     try {
-      await _authService.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      await _authService.signOut(session);
       return const Result.success(null);
     } on Exception catch (e) {
       return Result.failure(e);

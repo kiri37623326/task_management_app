@@ -17,7 +17,10 @@ class _ResetPasswordWidget extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final emailTextEditingController = useTextEditingController();
-    final passwordTextEditingController = useTextEditingController();
+    final oneTimePassCodeTextEditingController = useTextEditingController();
+    final newPasswordTextEditingController = useTextEditingController();
+    final confirmationNewPasswordTextEditingController =
+        useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new, const []);
     return Scaffold(
         body: Form(
@@ -30,29 +33,30 @@ class _ResetPasswordWidget extends HookWidget {
               decoration: const InputDecoration(labelText: "Email"),
               keyboardType: TextInputType.emailAddress,
               autofillHints: const [AutofillHints.email],
+              textInputAction: TextInputAction.next,
             ),
             TextFormField(
-              controller: passwordTextEditingController,
-              decoration: const InputDecoration(labelText: "Password"),
+              controller: oneTimePassCodeTextEditingController,
+              decoration: const InputDecoration(labelText: "OneTimePassCode"),
               obscureText: true,
-              autofillHints: const [AutofillHints.password],
-              onEditingComplete: () => TextInput.finishAutofillContext(),
+              autofillHints: const [AutofillHints.oneTimeCode],
+              textInputAction: TextInputAction.next,
             ),
             TextFormField(
-              controller: passwordTextEditingController,
+              controller: newPasswordTextEditingController,
               decoration: const InputDecoration(labelText: "New Password"),
               obscureText: true,
-              autofillHints: const [AutofillHints.password],
-              onEditingComplete: () => TextInput.finishAutofillContext(),
+              autofillHints: const [AutofillHints.newPassword],
+              textInputAction: TextInputAction.next,
             ),
             TextFormField(
-              controller: passwordTextEditingController,
+              controller: confirmationNewPasswordTextEditingController,
               decoration: const InputDecoration(
                 labelText: "Confirmation New Password",
               ),
               obscureText: true,
-              autofillHints: const [AutofillHints.password],
               onEditingComplete: () => TextInput.finishAutofillContext(),
+              textInputAction: TextInputAction.done,
             ),
             Consumer(
               builder: (context, ref, _) {
@@ -61,7 +65,14 @@ class _ResetPasswordWidget extends HookWidget {
                   onPressed: () async {
                     final res = await ref
                         .read(signInUserProvider.notifier)
-                        .resetPassword();
+                        .resetPassword(
+                          email: emailTextEditingController.text,
+                          oneTimePassCode:
+                              oneTimePassCodeTextEditingController.text,
+                          newPassword: newPasswordTextEditingController.text,
+                          confirmationNewPassword:
+                              confirmationNewPasswordTextEditingController.text,
+                        );
                     res.when(
                       success: (_) {
                         ref

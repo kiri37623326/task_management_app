@@ -36,14 +36,6 @@ class MainApp extends ConsumerWidget {
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //     currentIndex: ref.watch(navigationStateProvider
-      //         .select((value) => value.bottomNavigationState.rawValue)),
-      //     type: BottomNavigationBarType.fixed,
-      //     onTap: (value) {},
-      //     items: BottomNavigationState.values
-      //         .map((e) => BottomNavigationBarItem(icon: e.icon, label: e.name))
-      //         .toList()),
     );
   }
 }

@@ -7,7 +7,7 @@ import 'package:task_management_application/provider/notifier/sign_in_user_notif
 import 'package:task_management_application/provider/state/navigation/route_path.dart';
 import 'package:task_management_application/view/page/main_app/main_app_page.dart';
 import 'package:task_management_application/view/page/auth/reset_password/reset_password_page.dart';
-import 'package:task_management_application/view/page/auth/send_code_for_reset_password/send_code_for_reset_password_page.dart';
+import 'package:task_management_application/view/page/auth/reset_password/send_code_for_reset_password_page.dart';
 import 'package:task_management_application/view/page/session_timeout_page.dart';
 import 'package:task_management_application/view/page/auth/sign_in/sign_in_page.dart';
 import 'package:task_management_application/view/page/auth/sign_up/sign_up_page.dart';
