@@ -55,6 +55,7 @@ class _ResetPasswordWidget extends HookWidget {
                 labelText: "Confirmation New Password",
               ),
               obscureText: true,
+              autofillHints: const [AutofillHints.newPassword],
               onEditingComplete: () => TextInput.finishAutofillContext(),
               textInputAction: TextInputAction.done,
             ),

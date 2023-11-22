@@ -1,4 +1,4 @@
-import 'package:task_management_application/domain/entity/authentication_info.dart';
+import 'package:task_management_application/domain/entity/session.dart';
 import 'package:task_management_application/domain/entity/sign_in_user.dart';
 
 abstract class ISignInWithEmailAndPassword implements ISignOut {

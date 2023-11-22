@@ -21,9 +21,9 @@ class _SignInView extends HookConsumerWidget {
       if (next == null || next.isEmpty) return;
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(next)));
     });
+    final formKey = useMemoized(GlobalKey<FormState>.new, const []);
     final emailTextEditingController = useTextEditingController();
     final passwordTextEditingController = useTextEditingController();
-    final formKey = useMemoized(GlobalKey<FormState>.new, const []);
     return Scaffold(
       body: Form(
         key: formKey,

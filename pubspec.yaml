@@ -29,6 +29,8 @@ dependencies:
   drift: ^2.13.1
   local_auth: ^2.1.7
   amazon_cognito_identity_dart_2: ^3.6.0
+  kanban_board: ^0.1.0
+  collection: ^1.18.0
 
 dev_dependencies:
   flutter_test:

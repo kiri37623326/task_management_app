@@ -1,5 +1,5 @@
 import 'package:task_management_application/core/utils/logger.dart';
-import 'package:task_management_application/domain/entity/authentication_info.dart';
+import 'package:task_management_application/domain/entity/session.dart';
 import 'package:amazon_cognito_identity_dart_2/cognito.dart';
 import 'package:task_management_application/domain/entity/sign_in_user.dart';
 import 'package:task_management_application/infrastructure/auth_service/base_auth_service.dart';
@@ -27,8 +27,8 @@ class CognitoService extends BaseAuthService {
     ];
     try {
       CognitoUserPoolData data = await _userPool.signUp(
-        'email@inspire.my',
-        'Password001',
+        email,
+        password,
         userAttributes: userAttributes,
       );
     } catch (e) {
@@ -109,7 +109,7 @@ class CognitoService extends BaseAuthService {
       if (session == null) {
         throw Exception();
       }
-      Logger.finest(session!.getAccessToken().getJwtToken() ?? "null");
+      Logger.finest(session.getAccessToken().getJwtToken() ?? "null");
       return SignInUser(
           id: "",
           displayName: "",

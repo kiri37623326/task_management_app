@@ -4,8 +4,8 @@ abstract class RoutePath {
 
   static const String baseUrl = "/";
 
-  factory RoutePath.fromUri(Uri uri, bool isAuthorized) {
-    if (isAuthorized) {
+  factory RoutePath.fromUri(Uri uri, bool hasSession) {
+    if (hasSession) {
       if (uri.pathSegments.isEmpty) {
         return MyTaskListPath();
       }
