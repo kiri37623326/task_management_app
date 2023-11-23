@@ -1,0 +1,3 @@
+class DynamoDB {}
+
+class DynamoDBTable {}
