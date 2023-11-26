@@ -12,22 +12,23 @@ class MyTaskListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: KanbanBoard([
-      BoardListsData(items: [
-        const ListTile(title: Text("foo")),
-        const ListTile(title: Text("foo")),
-        const ListTile(title: Text("foo")),
+      body: KanbanBoard([
+        BoardListsData(items: [
+          const ListTile(title: Text("foo")),
+          const ListTile(title: Text("foo")),
+          const ListTile(title: Text("foo")),
+        ]),
+        BoardListsData(items: [
+          const ListTile(title: Text("foo")),
+          const ListTile(title: Text("foo")),
+          const ListTile(title: Text("foo")),
+        ]),
+        BoardListsData(items: [
+          const ListTile(title: Text("foo")),
+          const ListTile(title: Text("foo")),
+          const ListTile(title: Text("foo")),
+        ])
       ]),
-      BoardListsData(items: [
-        const ListTile(title: Text("foo")),
-        const ListTile(title: Text("foo")),
-        const ListTile(title: Text("foo")),
-      ]),
-      BoardListsData(items: [
-        const ListTile(title: Text("foo")),
-        const ListTile(title: Text("foo")),
-        const ListTile(title: Text("foo")),
-      ])
-    ]));
+    );
   }
 }

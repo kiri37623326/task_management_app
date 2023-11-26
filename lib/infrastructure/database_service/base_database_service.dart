@@ -1,3 +1,3 @@
 abstract class BaseDatabaseService {
-  query();
+  void query();
 }

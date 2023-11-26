@@ -15,6 +15,10 @@ class UserTasksNotifier extends Notifier<List<Task>> {
   @override
   List<Task> build() => <Task>[];
 
+  Future<Result<void>> search() async {
+    return Result
+  }
+
   Future<Result<void>> registerTask(Task task) async {
     final res = await ref.read(registerTaskUseCaseProvider).registerTask(task);
     res.when(

@@ -5,10 +5,10 @@ import 'package:task_management_application/core/utils/logger.dart';
 import 'package:task_management_application/provider/notifier/navigation/navigation_state_provider.dart';
 import 'package:task_management_application/provider/notifier/sign_in_user_notifier.dart';
 import 'package:task_management_application/provider/state/navigation/route_path.dart';
-import 'package:task_management_application/view/page/main_app/main_app_page.dart';
+import 'package:task_management_application/view/page/main_app/main_app.dart';
 import 'package:task_management_application/view/page/auth/reset_password/reset_password_page.dart';
 import 'package:task_management_application/view/page/auth/reset_password/send_code_for_reset_password_page.dart';
-import 'package:task_management_application/view/page/session_timeout_page.dart';
+import 'package:task_management_application/view/page/session_timeout.dart';
 import 'package:task_management_application/view/page/auth/sign_in/sign_in_page.dart';
 import 'package:task_management_application/view/page/auth/sign_up/sign_up_page.dart';
 
@@ -32,21 +32,21 @@ class MainRouterDelegate extends RouterDelegate<RoutePath>
   /// false を返すとアプリ全体をポップする。つまりアプリを閉じる。
   ///
   /// 非同期処理を行わない場合は [SynchronousFuture] で返却すべき
-  // @override
-  // Future<bool> popRoute() async {
-  //   Logger.finest("popRoute");
-  //   // 基本機能は PopNavigatorRouterDelegateMixin が提供するので override しなくてもいい
-  //   // PopNavigatorRouterDelegateMixin が提供するのは以下
-  //   final NavigatorState? navigator = navigatorKey.currentState;
-  //   if (navigator == null) {
-  //     return SynchronousFuture<bool>(false);
-  //   }
-  //   return navigator.maybePop();
-  //   // maybePop は Navigator の pages stack がなくなるまでポップする
-  //   // stack がなくなったら false が返る
-  //   // stack がなくても戻るボタンでアプリを閉じてほしくない場合
-  //   // 例えば bottom navigation bar でタブ移動の履歴をたどるような場合には向かない
-  // }
+  @override
+  Future<bool> popRoute() async {
+    Logger.finest("popRoute");
+    // 基本機能は PopNavigatorRouterDelegateMixin が提供するので override しなくてもいい
+    // PopNavigatorRouterDelegateMixin が提供するのは以下
+    final NavigatorState? navigator = navigatorKey.currentState;
+    if (navigator == null) {
+      return SynchronousFuture<bool>(false);
+    }
+    return navigator.maybePop();
+    // maybePop は Navigator の pages stack がなくなるまでポップする
+    // stack がなくなったら false が返る
+    // stack がなくても戻るボタンでアプリを閉じてほしくない場合
+    // 例えば bottom navigation bar でタブ移動の履歴をたどるような場合には向かない
+  }
 
   /// 現在のアプリの状態から [RoutePath] を返す
   ///

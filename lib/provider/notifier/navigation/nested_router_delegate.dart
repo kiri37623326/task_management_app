@@ -66,4 +66,9 @@ class NestedRouterDelegate extends RouterDelegate<RoutePath>
     _ref.read(navigationStateProvider.notifier).goTo(configuration);
     assert(false); // 仮に呼び出された場合にエラーを出すようにしておく
   }
+
+  // @override
+  // Future<void> setInitialRoutePath(RoutePath configuration) {
+  //   return super.setInitialRoutePath(configuration);
+  // }
 }

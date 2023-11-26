@@ -8,7 +8,7 @@ final taskRepositoryProvider = Provider<TaskRepository>((ref) {
 });
 
 abstract class TaskRepository {
-  Future<Result<List<Task>>> loadTasks();
+  Future<Result<List<Task>>> search();
   Future<Result<void>> register(Task task);
   Future<Result<void>> delete(Task task);
   Future<Result<void>> update(Task task);

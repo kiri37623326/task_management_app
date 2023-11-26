@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:task_management_application/provider/notifier/navigation/navigation_state_provider.dart';
 import 'package:task_management_application/provider/notifier/navigation/nested_router_delegate.dart';
-import 'package:task_management_application/provider/state/navigation/route_path.dart';
 
 class MainAppPage extends MaterialPage {
   const MainAppPage() : super(child: const MainApp());
@@ -27,11 +25,19 @@ class MainApp extends ConsumerWidget {
           children: [
             ListTile(
               title: const Text("SampleMenu"),
-              onTap: () {
-                ref
-                    .read(navigationStateProvider.notifier)
-                    .goTo(TaskDetailPath("sample"));
-              },
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text("SampleMenu"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text("SampleMenu"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text("SampleMenu"),
+              onTap: () {},
             ),
           ],
         ),
