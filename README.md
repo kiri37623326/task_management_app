@@ -46,7 +46,7 @@ Flutter の最適なアーキテクチャを考えるために作成している
 
 - タスクの ID で 検索
 - 自分に割り当てられているタスクの検索
-- タスクグループで検索
+- タスクステータスで検索
 - タスク ID から、それの子タスクを検索
 - 子タスク追加・削除・編集
 - タスク追加・削除・編集
@@ -56,15 +56,15 @@ Flutter の最適なアーキテクチャを考えるために作成している
 
 https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/best-practices.html
 
-| PartitionKey | SortKey                  | Manager          | Name        | Summary        | Description          | Deadline | State | Priority | GroupByManager |
-| ------------ | ------------------------ | ---------------- | ----------- | -------------- | -------------------- | -------- | ----- | -------- | -------------- |
-| ProjectID1   | Project#Detail           | sample user name | sample name | sample summary | This is description. | 20230711 |       |          |                |
-| ProjectID1   | Project#Assignee#UserID1 |                  |             |                |                      |          |       |          |                |
-| ProjectID1   | Project#Assignee#UserID2 |                  |             |                |                      |          |       |          |                |
-| ProjectID1   | Task#TaskID              | sample user name | task name   | summary        | detail description.  | 20230711 | Done  | 0        | 1              |
-| ProjectID1   | Task#TaskID#Child1       | sample user name | task name   | summary        | detail description.  | 20230711 | Done  | 0        | 1              |
-| ProjectID1   | Task#TaskID1             | sample user name | task name   | summary        | detail description.  | 20230711 | Done  | 0        | 1              |
-| ProjectID1   | Task#TaskID1#Child1      | sample user name | task name   | summary        | detail description.  | 20230711 | Done  | 0        | 1              |
-| ProjectID1   | Task#TaskID2             | sample user name | task name   | summary        | detail description.  | 20230711 | Done  | 1        | 1              |
-| ProjectID1   | Task#TaskID2#Child1      | sample user name | task name   | summary        | detail description.  | 20230711 | Done  | 1        | 1              |
-| ProjectID1   | Task#TaskID2#Child2      | sample user name | task name   | summary        | detail description.  | 20230711 | Doing | 1        | 1              |
+| PartitionKey | SortKey                  | Manager          | Name        | Summary        | Description          | Deadline | Status | Priority |
+| ------------ | ------------------------ | ---------------- | ----------- | -------------- | -------------------- | -------- | ------ | -------- |
+| ProjectID1   | Project#Detail           | sample user name | sample name | sample summary | This is description. | 20230711 |        |          |
+| ProjectID1   | Project#Assignee#UserID1 |                  |             |                |                      |          |        |          |
+| ProjectID1   | Project#Assignee#UserID2 |                  |             |                |                      |          |        |          |
+| ProjectID1   | Task#TaskID              | sample user name | task name   | summary        | detail description.  | 20230711 | Done   | 0        |
+| ProjectID1   | Task#TaskID#Child1       | sample user name | task name   | summary        | detail description.  | 20230711 |        | 0        |
+| ProjectID1   | Task#TaskID1             | sample user name | task name   | summary        | detail description.  | 20230711 | Done   | 0        |
+| ProjectID1   | Task#TaskID1#Child1      | sample user name | task name   | summary        | detail description.  | 20230711 | Done   | 0        |
+| ProjectID1   | Task#TaskID2             | sample user name | task name   | summary        | detail description.  | 20230711 | Done   | 1        |
+| ProjectID1   | Task#TaskID2#Child1      | sample user name | task name   | summary        | detail description.  | 20230711 | Done   | 1        |
+| ProjectID1   | Task#TaskID2#Child2      | sample user name | task name   | summary        | detail description.  | 20230711 | Doing  | 1        |
